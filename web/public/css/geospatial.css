@@ -1,0 +1,34 @@
+.legendTable {
+    margin-bottom: 0;
+}
+
+#mapWell {
+    padding: 5px;
+    height: 500px;
+}
+#map {
+    height: 100%;
+}
+
+.loadingBar div {
+    width: 100px;
+}
+
+.loadingBar {
+    margin-bottom: 0;
+}
+
+.orderDetails {
+    margin-bottom: 3px;
+}
+.orderActions {
+}
+
+.legendIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.template {
+    display: none;
+}

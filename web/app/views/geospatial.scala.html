@@ -1,0 +1,87 @@
+@(message: String)(implicit request:RequestHeader)
+
+@main("geospatial") {
+
+<div class="container">
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-7">
+                <h1>InsightEdge Geospatial Demo</h1>
+                <p>
+                    Spark streaming application computes the price of taxi orders ingested from Kafka stream.
+                </p>
+                <p>
+                    The taxi price is calculated based on the taxi demand within 0.5 km / 0.31 mi. The price goes up if there are more than 3 other pending requests nearby.
+                </p>
+                <p><b>Click on the map below to submit additional order and get the dynamic price for it.</b></p>
+            </div>
+            <div class="col-sm-5">
+                <label>Map legend:</label>
+                <table class="table table-condensed legendTable">
+                    <tbody>
+                    <tr>
+                        <td><img class="legendIcon" src="http://maps.google.com/mapfiles/ms/icons/red.png"></td>
+                        <td>Taxi order</td>
+                    </tr>
+                    <tr>
+                        <td><img class="legendIcon" src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"></td>
+                        <td>Selected order</td>
+                    </tr>
+                    <tr>
+                        <td><img class="legendIcon" src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"></td>
+                        <td>Previous order that affects the price of the selected order</td>
+                    </tr>
+                    <tr>
+                        <td><img class="legendIcon" src="http://maps.google.com/mapfiles/ms/icons/blue.png"></td>
+                        <td>New order</td>
+                    </tr>
+                    <tr>
+                        <td><img class="legendIcon" src="http://maps.google.com/mapfiles/ms/icons/lightblue.png"></td>
+                        <td>Removed order</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="mapWell" class="well">
+        <div id="map"></div>
+    </div>
+
+    <div id="infoTemplate" class="template">
+        <table class="table table-condensed orderDetails">
+            <tbody>
+            <tr>
+                <td>Order ID:</td>
+                <td><span class="orderId"></span></td>
+            </tr>
+            <tr>
+                <td>Order date:</td>
+                <td><span class="orderTime"></span></td>
+            </tr>
+            <tr>
+                <td>Latitude:</td>
+                <td><span class="orderLatitude"></span></td>
+            </tr>
+            <tr>
+                <td>Longitude:</td>
+                <td><span class="orderLongitude"></span></td>
+            </tr>
+            <tr>
+                <td>Price surge:</td>
+                <td><span class="orderPriceSurge"></span></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="orderActions">
+            <button class="btn btn-xs btn-danger orderActionPickup" type="button">
+                <span class="glyphicon glyphicon-remove"></span>
+                Submit pickup event
+            </button>
+        </div>
+    </div>
+
+</div>
+
+}
