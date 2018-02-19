@@ -1,1 +1,1 @@
-# inssightedge-geo-demo
+# insightedge-geo-demo
