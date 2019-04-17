@@ -7,7 +7,7 @@
     <groupId>com.gigaspaces.demos</groupId>
     <artifactId>insightedge-geo-demo</artifactId>
     <packaging>pom</packaging>
-    <version>12.3.0-m19</version>
+    <version>14.0.1</version>
     <modules>
         <module>feeder</module>
         <module>common-kafka-model</module>
@@ -18,8 +18,8 @@
 
 
     <properties>
-        <xap.version>${project.version}</xap.version>
-        <spark.version>2.2.0</spark.version>
+        <ie.version>${project.version}</ie.version>
+        <spark.version>2.3.2</spark.version>
         <scala.version>2.11.8</scala.version>
         <scalatest.version>2.2.4</scalatest.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,14 +27,23 @@
     </properties>
 
 
+    <repositories>
+        <repository>
+            <id>org.openspaces</id>
+            <url>http://maven-repository.openspaces.org</url>
+        </repository>
+    </repositories>
     <pluginRepositories>
+        <pluginRepository>
+            <id>org.openspaces</id>
+            <url>http://maven-repository.openspaces.org</url>
+        </pluginRepository>
         <pluginRepository>
             <id>scala-tools.org</id>
             <name>Scala-tools Maven2 Repository</name>
             <url>http://scala-tools.org/repo-releases</url>
         </pluginRepository>
     </pluginRepositories>
-
 
     <dependencyManagement>
         <dependencies>
@@ -82,11 +91,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>2.7.2-rc2</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
@@ -99,7 +103,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.4.4</version>
                 <executions>
                     <execution>
                         <id>scala-compile-first</id>
@@ -114,6 +118,5 @@
 
         </plugins>
     </build>
-
 
 </project>

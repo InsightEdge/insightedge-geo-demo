@@ -16,7 +16,7 @@ import play.api.mvc._
 object RestEndpoint extends Controller {
 
   val grid = {
-    val spaceConfigurer = new SpaceProxyConfigurer("insightedge-space").lookupGroups("insightedge").lookupLocators("127.0.0.1:4174")
+    val spaceConfigurer = new SpaceProxyConfigurer("demo").lookupGroups("xap-14.0.1").lookupLocators("127.0.0.1:4174")
     new GigaSpaceConfigurer(spaceConfigurer).create()
   }
 
