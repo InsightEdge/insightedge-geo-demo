@@ -2,12 +2,9 @@
 
 SCRIPTS_DIR=$(dirname "$0")
 
-echo "SCRIPTS_DIR is: $SCRIPTS_DIR"
-
 pushd $SCRIPTS_DIR/..
 
-echo "pwd is: `pwd`"
-cd ..
+echo `pwd`
 sbt web/run
 
 popd
